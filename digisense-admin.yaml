@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-portal
+  labels:
+    app:  digisense-portal
+spec:
+  selector:
+    matchLabels:
+      app: digisense-portal
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-portal
+    spec:
+      containers:
+      - name:  digisense-portal
+        image:  dockerforhns/digisenseportal:v1.1
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always

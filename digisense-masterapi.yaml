@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-masterapi
+  labels:
+    app:  digisense-masterapi
+spec:
+  selector:
+    matchLabels:
+      app: digisense-masterapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-masterapi
+    spec:
+      containers:
+      - name:  digisense-masterapi
+        image:  dockerforhns/masters-api:v1.0
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always
