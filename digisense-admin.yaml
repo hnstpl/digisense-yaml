@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  digisense-portal
-        image:  dockerforhns/digisenseportal:v1.1
+        image:  asia.gcr.io/digisense-293411/adminportal
         env:
         - name: DBHOST
           value: digisense-mysql
