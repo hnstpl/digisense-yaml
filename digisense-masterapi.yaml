@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  digisense-masterapi
-        image:  asia.gcr.io/digisense-293411/masters-api
+        image:  asia.gcr.io/digisense-fd-236012/masters-api
         env:
         - name: DBHOST
           value: digisense-mysql
