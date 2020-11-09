@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: digisense-microservices
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /*
+          backend:
+            serviceName: digisense-portal-svc
+            servicePort: 8001
+        - path: /masters/*
+          backend:
+            serviceName: digisense-masterapi-svc
+            servicePort: 8001
