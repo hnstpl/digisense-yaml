@@ -11,7 +11,3 @@ spec:
           backend:
             serviceName: digisense-portal-svc
             servicePort: 8001
-        - path: /masters/*
-          backend:
-            serviceName: digisense-masterapi-svc
-            servicePort: 8001
