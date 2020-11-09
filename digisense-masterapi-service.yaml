@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: digisense-masterapi
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 8001 
     targetPort: 80
