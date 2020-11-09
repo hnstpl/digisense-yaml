@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: digisense-portal
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8001 
     targetPort: 80 
