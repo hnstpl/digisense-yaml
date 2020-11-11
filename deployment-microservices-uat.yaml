@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-portal
+  labels:
+    app:  digisense-portal
+spec:
+  selector:
+    matchLabels:
+      app: digisense-portal
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-portal
+    spec:
+      containers:
+      - name:  digisense-portal
+        image:  asia.gcr.io/digisense-fd-236012/adminportal
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digisense-portal-svc
+spec:
+  selector:
+    app: digisense-portal
+  type: NodePort
+  ports:
+  - port: 8001 
+    targetPort: 80 
+    protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-masterapi
+  labels:
+    app:  digisense-masterapi
+spec:
+  selector:
+    matchLabels:
+      app: digisense-masterapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-masterapi
+    spec:
+      containers:
+      - name:  digisense-masterapi
+        image:  asia.gcr.io/digisense-fd-236012/masters-api
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digisense-masterapi-svc
+spec:
+  selector:
+    app: digisense-masterapi
+  type: NodePort
+  ports:
+  - port: 8001 
+    targetPort: 80
+    protocol: TCP
+---
