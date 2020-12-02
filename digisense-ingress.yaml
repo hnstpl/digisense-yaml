@@ -2,7 +2,8 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: digisense-microservices
-  namespace: default
+  annotations: 
+    kubernetes.io/ingress.global-static-io-name: "admin-portal-cluster01-pubip01"
 spec:
   rules:
   - http:
