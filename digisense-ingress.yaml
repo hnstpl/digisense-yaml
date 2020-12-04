@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: digisense-microservices
   annotations: 
-    kubernetes.io/ingress.global-static-io-name: "admin-portal-cluster01-pubip01"
+    kubernetes.io/ingress.global-static-ip-name: "admin-portal-cluster01-pubip01"
 spec:
   rules:
   - http:
