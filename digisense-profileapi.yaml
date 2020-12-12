@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-unifiedlogin
+  name:  digisense-profileapi
   labels:
-    app:  digisense-unifiedlogin
+    app:  digisense-profileapi
 spec:
   selector:
     matchLabels:
-      app: digisense-unifiedlogin
+      app: digisense-profileapi
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-unifiedlogin
+        app:  digisense-profileapi
     spec:
       containers:
-      - name:  digisense-unifiedlogin
-        image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
+      - name:  digisense-profileapi
+        image:  asia.gcr.io/digisense-fd-236012/digisenseprofileapi
         env:
         - name: DBHOST
           value: digisense-mysql
