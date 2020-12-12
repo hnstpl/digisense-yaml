@@ -12,7 +12,7 @@ spec:
           backend:
             serviceName: digisense-portal-svc
             servicePort: 8001
-        - path: /unifiedlogin
+        - path: /unifiedlogin/*
           backend:
             serviceName: digisense-unifiedlogin-svc
             servicePort: 8001
