@@ -16,3 +16,7 @@ spec:
           backend:
             serviceName: digisense-unifiedlogin-svc
             servicePort: 8001
+        - path: /masters/*
+          backend:
+            serviceName: digisense-masters-svc
+            servicePort: 8001
