@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
         resources:
          limits:
-          cpu: 70m
+          cpu: 45m
         env:
         - name: DBHOST
           value: digisense-mysql
