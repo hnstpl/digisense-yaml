@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-mandi
+  name:  digisense-enquiry
   labels:
-    app:  digisense-mandi
+    app:  digisense-enquiry
 spec:
   selector:
     matchLabels:
-      app: digisense-mandi
+      app: digisense-enquiry
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-mandi
+        app:  digisense-enquiry
     spec:
       containers:
-      - name:  digisense-mandi
+      - name:  digisense-enquiry
         image:  asia.gcr.io/digisense-fd-236012/enquiry
         resources:
          limits:

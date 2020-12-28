@@ -24,3 +24,7 @@ spec:
           backend:
             serviceName: digisense-mandi-svc
             servicePort: 8001
+        - path: /enquiry/*
+          backend:
+            serviceName: digisense-enquiry-svc
+            servicePort: 8001
