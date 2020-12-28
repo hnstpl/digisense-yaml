@@ -28,3 +28,7 @@ spec:
           backend:
             serviceName: digisense-enquiry-svc
             servicePort: 8001
+        - path: /bannersandnotifications/*
+          backend:
+            serviceName: digisense-banners-svc
+            servicePort: 8001
