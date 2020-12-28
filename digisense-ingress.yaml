@@ -20,3 +20,7 @@ spec:
           backend:
             serviceName: digisense-masters-svc
             servicePort: 8001
+        - path: /mandi/*
+          backend:
+            serviceName: digisense-mandi-svc
+            servicePort: 8001
