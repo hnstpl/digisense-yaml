@@ -34,5 +34,5 @@ spec:
             servicePort: 8001
         - path: /subscription/*
           backend:
-            serviceName: digisense-banners-svc
+            serviceName: digisense-subscription-svc
             servicePort: 8001
