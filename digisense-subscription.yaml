@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-enquiry
+  name:  digisense-subscription
   labels:
-    app:  digisense-enquiry
+    app:  digisense-subscription
 spec:
   selector:
     matchLabels:
-      app: digisense-enquiry
+      app: digisense-subscription
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-enquiry
+        app:  digisense-subscription
     spec:
       containers:
       - name:  digisense-enquiry
-        image:  asia.gcr.io/digisense-fd-236012/enquiry
+        image:  asia.gcr.io/digisense-fd-236012/subscription
         resources:
          limits:
           cpu: 10m
