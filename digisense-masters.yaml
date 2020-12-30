@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/masters
         resources:
          limits:
-          cpu: 40m
+          cpu: 25m
         env:
         - name: DBHOST
           value: digisense-mysql
