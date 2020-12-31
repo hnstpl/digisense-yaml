@@ -17,9 +17,6 @@ spec:
       containers:
       - name:  digisense-unifiedlogin
         image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
-        resources:
-         limits:
-          cpu: 43m
         env:
         - name: DBHOST
           value: digisense-mysql

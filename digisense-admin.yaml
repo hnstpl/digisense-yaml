@@ -17,9 +17,6 @@ spec:
       containers:
       - name:  digisense-portal
         image:  asia.gcr.io/digisense-fd-236012/adminportal
-        resources:
-         limits:
-          cpu: 28m
         env:
         - name: DBHOST
           value: digisense-mysql

@@ -17,9 +17,6 @@ spec:
       containers:
       - name:  digisense-enquiry
         image:  asia.gcr.io/digisense-fd-236012/banners
-        resources:
-         limits:
-          cpu: 25m
         env:
         - name: DBHOST
           value: digisense-mysql

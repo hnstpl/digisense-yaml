@@ -17,9 +17,6 @@ spec:
       containers:
       - name:  digisense-masters
         image:  asia.gcr.io/digisense-fd-236012/masters
-        resources:
-         limits:
-          cpu: 25m
         env:
         - name: DBHOST
           value: digisense-mysql
