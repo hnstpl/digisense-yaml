@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  digisense-enquiry
-        image:  asia.gcr.io/digisense-fd-236012/GetFromFDW
+        image:  asia.gcr.io/digisense-fd-236012/getfromfdw
         resources:
          limits:
           cpu: 50m
