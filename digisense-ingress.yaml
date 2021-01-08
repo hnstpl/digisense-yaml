@@ -36,7 +36,7 @@ spec:
           backend:
             serviceName: digisense-subscription-svc
             servicePort: 8001
-        - path: /getfromfdw/*
+        - path: /fdwmasters/*
           backend:
             serviceName: digisense-fromfdw-svc
             servicePort: 8001
