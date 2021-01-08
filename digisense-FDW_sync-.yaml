@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-subscription
+  name:  digisense-fromfdw
   labels:
-    app:  digisense-subscription
+    app:  digisense-fromfdw
 spec:
   selector:
     matchLabels:
-      app: digisense-subscription
+      app: digisense-fromfdw
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-subscription
+        app:  digisense-fromfdw
     spec:
       containers:
-      - name:  digisense-enquiry
+      - name:  digisense-fromfdw
         image:  asia.gcr.io/digisense-fd-236012/getfromfdw
         resources:
          limits:
