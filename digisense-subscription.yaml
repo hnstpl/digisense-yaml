@@ -15,7 +15,7 @@ spec:
         app:  digisense-subscription
     spec:
       containers:
-      - name:  digisense-enquiry
+      - name:  digisense-subscription
         image:  asia.gcr.io/digisense-fd-236012/subscription
         resources:
          limits:
