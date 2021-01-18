@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: digisense-masters
-  replicas: 1
+  replicas: 5
   template:
     metadata:
       labels:
@@ -17,6 +17,9 @@ spec:
       containers:
       - name:  digisense-masters
         image:  asia.gcr.io/digisense-fd-236012/masters
+        resources:
+         limits:
+          cpu: 20m
         env:
         - name: DBHOST
           value: digisense-mysql
