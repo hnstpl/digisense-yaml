@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: digisense-portal
-  replicas: 4
+  replicas: 3
   template:
     metadata:
       labels:
@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/adminportal
         resources:
          limits:
-          cpu: 25m
+          cpu: 33m
         env:
         - name: DBHOST
           value: digisense-mysql
