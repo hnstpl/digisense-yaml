@@ -20,6 +20,8 @@ spec:
         resources:
          limits:
           cpu: 25m
+         requests:
+          memory: 256Mi
         env:
         - name: DBHOST
           value: digisense-mysql
