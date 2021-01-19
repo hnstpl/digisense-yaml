@@ -17,6 +17,11 @@ spec:
       containers:
       - name:  digisense-portal
         image:  asia.gcr.io/digisense-fd-236012/adminportal
+        resources:
+         limits:
+          memory: 260Mi
+         requests:
+          memory: 100Mi
         env:
         - name: DBHOST
           value: digisense-mysql
