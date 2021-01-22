@@ -1,11 +1,11 @@
-apiVersion: batch/v1beta1
+apiVersion: job/v1
 kind: CronJob
 metadata:
   name: digisense-cron
 spec:
   schedule: "*/1 * * * *"
-  successfulJobsHistoryLimit: 0
-  failedJobsHistoryLimit: 0
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:
@@ -13,6 +13,9 @@ spec:
           containers:
           - name: hello
             image: asia.gcr.io/digisense-fd-236012/generalcustapp-cronjob
+            resources:
+             limits:
+              cpu: 25m
             env:
             - name: DBHOST
               value: digisense-mysql
