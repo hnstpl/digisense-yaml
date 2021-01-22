@@ -13,7 +13,7 @@ spec:
           containers:
           - name: hello
             image: asia.gcr.io/digisense-fd-236012/generalcustapp-cronjob
-        env:
-        - name: DBHOST
-          value: digisense-mysql
+	    env:
+            - name: DBHOST
+              value: digisense-mysql
           restartPolicy: OnFailure
