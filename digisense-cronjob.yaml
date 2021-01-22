@@ -14,5 +14,4 @@ spec:
         resources:
          limits:
           cpu: 25m
-            imagePullPolicy: IfNotPresent
           restartPolicy: OnFailure
