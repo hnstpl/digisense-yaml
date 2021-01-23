@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: digisense-cron
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/30 * * * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
   jobTemplate:
