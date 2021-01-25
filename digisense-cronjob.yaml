@@ -15,7 +15,7 @@ spec:
             image: asia.gcr.io/digisense-fd-236012/generalcustapp-cronjob
             resources:
              limits:
-              cpu: 35m
+              cpu: 26m
             env:
             - name: DBHOST
               value: digisense-mysql
