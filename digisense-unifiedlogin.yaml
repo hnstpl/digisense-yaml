@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: digisense-unifiedlogin
-  replicas: 5
+  replicas: 1
   template:
     metadata:
       labels:
@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
         resources:
          limits:
-          cpu: 20m
+          cpu: 100m
         env:
         - name: DBHOST
           value: digisense-mysql
@@ -31,9 +31,9 @@ spec:
         - name: SMSGATEWAY
           value: https://bulkpush.mytoday.com/BulkSms/SingleMsgApi
         - name: SMSFEEDID
-          value: 382593
+          value: "382593"
         - name: SMSUSER
-          value: 7550223074
+          value: "7550223074"
         - name: SMSPASSWORD
           value: mahindra%40123
         ports:
