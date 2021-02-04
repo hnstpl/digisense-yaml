@@ -33,4 +33,4 @@ spec:
               key: password
         ports:
         - containerPort:  80
-      restartPolicy: on-failure
+      restartPolicy: Always
