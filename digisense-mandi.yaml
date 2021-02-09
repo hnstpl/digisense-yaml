@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/mandi
         resources:
          limits:
-          cpu: 75m
+          cpu: 150m
         env:
         - name: DBHOST
           value: digisense-mysql

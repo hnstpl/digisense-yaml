@@ -19,9 +19,10 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/subscription
         resources:
          limits:
-          cpu: 50m
+          cpu: 180m
           memory: 260Mi
          requests:
+          cpu: 100m
           memory: 85Mi
         env:
         - name: DBHOST

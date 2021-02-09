@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/banners
         resources:
          limits:
-          cpu: 150m
+          cpu: 200m
           memory: 350Mi
          requests:
           cpu: 100m
