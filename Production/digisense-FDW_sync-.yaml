@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-fromfdw
+  labels:
+    app:  digisense-fromfdw
+spec:
+  selector:
+    matchLabels:
+      app: digisense-fromfdw
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  digisense-fromfdw
+    spec:
+      containers:
+      - name:  digisense-fromfdw
+        image:  asia.gcr.io/digisense-fd-236012/getfromfdw
+        resources:
+         limits:
+          cpu: 25m
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-enquiry
+  labels:
+    app:  digisense-enquiry
+spec:
+  selector:
+    matchLabels:
+      app: digisense-enquiry
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-enquiry
+    spec:
+      containers:
+      - name:  digisense-enquiry
+        image:  asia.gcr.io/digisense-fd-236012/enquiry
+        resources:
+         limits:
+          cpu: 60m
+          memory: 260Mi
+         requests:
+          memory: 85Mi
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-profileapi
+  labels:
+    app:  digisense-profileapi
+spec:
+  selector:
+    matchLabels:
+      app: digisense-profileapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-profileapi
+    spec:
+      containers:
+      - name:  digisense-profileapi
+        image:  asia.gcr.io/digisense-fd-236012/digisenseprofileapi
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always

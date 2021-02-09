@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-unifiedlogin
+  labels:
+    app:  digisense-unifiedlogin
+spec:
+  selector:
+    matchLabels:
+      app: digisense-unifiedlogin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-unifiedlogin
+    spec:
+      containers:
+      - name:  digisense-unifiedlogin
+        image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
+        resources:
+         limits:
+          cpu: 100m
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        - name: SMSGATEWAY
+          value: https://bulkpush.mytoday.com/BulkSms/SingleMsgApi
+        - name: SMSFEEDID
+          value: "382593"
+        - name: SMSUSER
+          value: "7550223074"
+        - name: SMSPASSWORD
+          value: mahindra%40123
+        - name: DigisenseAPIKey
+          value: 302d7814e01de206d1e02640b95ba39c8a3f2447a1c3aaadfff6d93aa600b9ce
+        - name: DigisenseLoginURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/login
+        - name: DigisenseChangePINURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/changepin
+        ports:
+        - containerPort:  80
+      restartPolicy: Always

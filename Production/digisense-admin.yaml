@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-portal
+  labels:
+    app:  digisense-portal
+spec:
+  selector:
+    matchLabels:
+      app: digisense-portal
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  digisense-portal
+    spec:
+      containers:
+      - name:  digisense-portal
+        image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
+        resources:
+         limits:
+          cpu: 200m
+          memory: 400Mi
+         requests:
+          cpu: 100m
+          memory: 200Mi
+        env:
+        - name: DBHOST
+          value: "10.185.48.31"
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: OnFailure

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  digisense-masters
+  labels:
+    app:  digisense-masters
+spec:
+  selector:
+    matchLabels:
+      app: digisense-masters
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  digisense-masters
+    spec:
+      containers:
+      - name:  digisense-masters
+        image:  asia.gcr.io/digisense-fd-236012/masters
+        env:
+        - name: DBHOST
+          value: digisense-mysql
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort:  80
+      restartPolicy: Always
