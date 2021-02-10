@@ -42,6 +42,8 @@ spec:
           value: https://apiqa1.mahindradigisense.com/api/v2/login
         - name: DigisenseChangePINURL
           value: https://apiqa1.mahindradigisense.com/api/v2/changepin
+        - name: DigisenseUpdateProfileURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/profile?isSec=true
         ports:
         - containerPort:  80
       restartPolicy: Always
