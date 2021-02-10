@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: digisense-cron
 spec:
-  schedule: "0 */3 * * *"
+  schedule: "0 */9 * * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
   jobTemplate:
@@ -15,7 +15,11 @@ spec:
             image: asia.gcr.io/digisense-fd-236012/generalcustapp-cronjob
             resources:
              limits:
-              cpu: 50m
+              cpu: 800m
+              memory: 400Mi
+             requests:
+              cpu: 500m
+              memory: 200Mi
             env:
             - name: DBHOST
               value: digisense-mysql
