@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-portal
+  name:  prod-digisense-portal
   labels:
-    app:  digisense-portal
+    app:  prod-digisense-portal
 spec:
   selector:
     matchLabels:
-      app: digisense-portal
+      app: prod-digisense-portal
   replicas: 2
   template:
     metadata:
       labels:
-        app:  digisense-portal
+        app:  prod-digisense-portal
     spec:
       containers:
-      - name:  digisense-portal
+      - name:  prod-digisense-portal
         image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
         resources:
          limits:
