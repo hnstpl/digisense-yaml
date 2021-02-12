@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/adminportal
         resources:
          limits:
-          cpu: 900m
+          cpu: 1000m
           memory: 700Mi
          requests:
           cpu: 100m
