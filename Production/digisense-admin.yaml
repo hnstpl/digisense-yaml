@@ -19,8 +19,8 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
         resources:
          limits:
-          cpu: 200m
-          memory: 400Mi
+          cpu: 900m
+          memory: 700Mi
          requests:
           cpu: 100m
           memory: 200Mi
@@ -34,4 +34,4 @@ spec:
               key: password
         ports:
         - containerPort:  80
-      restartPolicy: OnFailure
+      restartPolicy: Always
