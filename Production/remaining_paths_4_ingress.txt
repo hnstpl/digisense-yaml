@@ -1,0 +1,29 @@
+
+        - path: /unifiedlogin/*
+          backend:
+            serviceName: digisense-unifiedlogin-svc
+            servicePort: 8001
+        - path: /masters/*
+          backend:
+            serviceName: digisense-masters-svc
+            servicePort: 8001
+        - path: /mandi/*
+          backend:
+            serviceName: digisense-mandi-svc
+            servicePort: 8001
+        - path: /enquiry/*
+          backend:
+            serviceName: digisense-enquiry-svc
+            servicePort: 8001
+        - path: /bannersandnotifications/*
+          backend:
+            serviceName: digisense-banners-svc
+            servicePort: 8001
+        - path: /subscription/*
+          backend:
+            serviceName: digisense-subscription-svc
+            servicePort: 8001
+        - path: /fdwmasters/*
+          backend:
+            serviceName: digisense-fromfdw-svc
+            servicePort: 8001
