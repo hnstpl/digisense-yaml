@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: digisense-portal-svc
+  name: prod-digisense-portal-svc
 spec:
   selector:
-    app: digisense-portal
+    app: prod-digisense-portal
   type: NodePort
   ports:
   - port: 8001 
