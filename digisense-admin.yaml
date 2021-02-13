@@ -27,6 +27,8 @@ spec:
         env:
         - name: DBHOST
           value: digisense-mysql
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
         - name: DBPASSWORD
           valueFrom:
             secretKeyRef:
