@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: prod-digisense-microservices
   annotations: 
-    kubernetes.io/ingress.global-static-ip-name: "admin-portal-cluster01-pubip01"
+    kubernetes.io/ingress.global-static-ip-name: "gca-gke-staticip"
 spec:
   rules:
   - http:

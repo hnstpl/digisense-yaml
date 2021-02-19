@@ -29,4 +29,10 @@ spec:
               value: "1"
             - name: TractorModuleName
               value: Tractor
+            - name: CropURL
+              value: https://byotdms-website.azurewebsites.net/api/master/GetCrops?date=1990-01-01 04:53:13.684&start=0&pageSize=50
+            - name: SelfManufactCode
+              value: "000001"
+            - name: CMS_ProductAPI
+              value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
           restartPolicy: OnFailure
