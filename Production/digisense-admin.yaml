@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: prod-digisense-portal
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
