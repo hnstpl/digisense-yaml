@@ -27,6 +27,8 @@ spec:
         env:
         - name: DBHOST
           value: "10.185.48.31"
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
         - name: DBPASSWORD
           valueFrom:
             secretKeyRef:
