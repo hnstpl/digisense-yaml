@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: <prod-mysql
+        app: prod-mysql
     spec:
       serviceAccountName: default
       containers:
