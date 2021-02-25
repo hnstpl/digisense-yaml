@@ -39,4 +39,4 @@ spec:
           value: O5GJk2fwJc0kap8m
         - name: DB_NAME
           value: dev_encrypted_generalcustomerapp
-        runAsNonRoot: false
+        # runAsNonRoot: false
