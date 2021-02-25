@@ -29,6 +29,8 @@ spec:
           value: "10.185.48.31"
         - name: ASPNETCORE_ENVIRONMENT
           value: Development
+        - name: INSTANCE_CONNECTION_NAME
+          value: generalcustomeravailability:asia-south1:gcavailability-mysql8-1
         - name: DBPASSWORD
           valueFrom:
             secretKeyRef:
