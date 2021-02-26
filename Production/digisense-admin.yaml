@@ -38,4 +38,6 @@ spec:
               key: password
         ports:
         - containerPort:  80
+      serviceAccount: default
+      serviceAccountName: default
       restartPolicy: Always
