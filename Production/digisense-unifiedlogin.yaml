@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-unifiedlogin
+  name:  prod-digisense-unifiedlogin
   labels:
-    app:  digisense-unifiedlogin
+    app:  prod-digisense-unifiedlogin
 spec:
   selector:
     matchLabels:
-      app: digisense-unifiedlogin
+      app: prod-digisense-unifiedlogin
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-unifiedlogin
+        app:  prod-digisense-unifiedlogin
     spec:
       containers:
       - name:  digisense-unifiedlogin
-        image:  asia.gcr.io/digisense-fd-236012/unifiedlogin
+        image:  asia.gcr.io/generalcustomeravailability/prod_unifiedlogin
         resources:
          limits:
-          cpu: 100m
+          cpu: 180m
         env:
         - name: DB_HOST
           valueFrom:
@@ -43,6 +43,8 @@ spec:
           value: 302d7814e01de206d1e02640b95ba39c8a3f2447a1c3aaadfff6d93aa600b9ce
         - name: DigisenseLoginURL
           value: https://apiqa1.mahindradigisense.com/api/v2/login
+        - name: DigisenseUpdateProfileURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/profile?isSec=true
         - name: DigisenseChangePINURL
           value: https://apiqa1.mahindradigisense.com/api/v2/changepin
         ports:
