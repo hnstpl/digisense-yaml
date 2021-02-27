@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/digisense-fd-236012/masters
         resources:
          limits:
-          cpu: 300m
+          cpu: 600m
          requests:
           memory: 85Mi
         env:
