@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
           - name: hello
-            image: asia.gcr.io/digisense-fd-236012/generalcustapp-cronjob
+            image: asia.gcr.io/generalcustomeravailability/prod_generalcustapp_cronjob
             resources:
              limits:
               cpu: 50m
