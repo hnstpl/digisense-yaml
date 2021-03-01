@@ -17,8 +17,26 @@ spec:
              limits:
               cpu: 50m
             env:
-            - name: DBHOST
-              value: digisense-mysql
+              - name: DB_HOST
+                valueFrom:
+                  secretKeyRef:
+                    name: private-ip-secret
+                    key: db_host
+             - name: DBPASSWORD
+               valueFrom:
+                 secretKeyRef:
+                   name: mysql-secret
+                   key: password
             - name: MandiResourceUrl
               value: https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&limit=10
+            - name: DefaultLanguageID
+              value: "1"
+            - name: TractorModuleName
+              value: Tractor
+            - name: CropURL
+              value: https://byotdms-website.azurewebsites.net/api/master/GetCrops?date=1990-01-01 04:53:13.684&start=0&pageSize=50
+            - name: SelfManufactCode
+              value: "000001"
+            - name: CMS_ProductAPI
+              value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
           restartPolicy: OnFailure
