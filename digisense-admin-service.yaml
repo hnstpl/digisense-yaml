@@ -10,4 +10,3 @@ spec:
   - port: 8001 
     targetPort: 80 
     protocol: TCP
-    mode: host
