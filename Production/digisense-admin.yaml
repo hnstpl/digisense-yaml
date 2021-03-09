@@ -30,15 +30,17 @@ spec:
             secretKeyRef:
               name: private-ip-secret
               key: db_host
-        - name: ASPNETCORE_ENVIRONMENT
-          value: Production
-        - name: INSTANCE_CONNECTION_NAME
-          value: generalcustomeravailability:asia-south1:gcavailability-mysql8-1
         - name: DBPASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: INSTANCE_CONNECTION_NAME
+          value: generalcustomeravailability:asia-south1:gcavailability-mysql8-1
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
         ports:
         - containerPort:  80
       serviceAccount: default
