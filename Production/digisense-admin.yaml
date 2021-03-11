@@ -17,10 +17,9 @@ spec:
       containers:
       - name:  prod-digisense-portal
         image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
-        timeoutSeconds: 120
         resources:
          limits:
-          cpu: 900m
+          cpu: 1500m
           memory: 700Mi
          requests:
           cpu: 100m
