@@ -41,6 +41,8 @@ spec:
           value: generalcustomeravailability:asia-south1:gcavailability-mysql8-1
         - name: StorageDomain
           value: https://storage.googleapis.com/
+        - name: gcbucket
+          value: gcavailability-bucket01
         ports:
         - containerPort:  80
       serviceAccount: default
