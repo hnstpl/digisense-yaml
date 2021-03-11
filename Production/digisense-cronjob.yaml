@@ -42,4 +42,6 @@ spec:
               value: "000001"
             - name: CMS_ProductAPI
               value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: generalcustomeravailability-c9c58a28f833.json
           restartPolicy: OnFailure
