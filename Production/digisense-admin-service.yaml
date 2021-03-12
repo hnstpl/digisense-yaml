@@ -5,7 +5,6 @@ metadata:
 spec:
   selector:
     app: prod-digisense-portal
-  timeout: 120
   type: NodePort
   ports:
   - port: 8001 
