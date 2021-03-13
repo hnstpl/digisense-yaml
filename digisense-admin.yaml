@@ -32,6 +32,8 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Dev
         ports:
         - containerPort:  80
       restartPolicy: Always
