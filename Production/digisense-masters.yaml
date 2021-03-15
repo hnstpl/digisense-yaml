@@ -1,25 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-masters
+  name:  prod-digisense-masters
   labels:
-    app:  digisense-masters
+    app:  prod-digisense-masters
 spec:
   selector:
     matchLabels:
-      app: digisense-masters
+      app: prod-digisense-masters
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-masters
+        app:  prod-digisense-masters
     spec:
       containers:
       - name:  digisense-masters
-        image:  asia.gcr.io/digisense-fd-236012/masters
+        image:  asia.gcr.io/generalcustomeravailability/prod_masters
         env:
-        - name: DBHOST
-          value: digisense-mysql
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: private-ip-secret
+              key: db_host
         - name: DBPASSWORD
           valueFrom:
             secretKeyRef:
