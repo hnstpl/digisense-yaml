@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  prod-digisense-portal
-        image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
+        image:  asia.gcr.io/generalcustomeravailability/prod_adminportal@sha256:d0a12331fa1dbe384cb1479c6768d237c7b8871e73cb5c7461e53d0c8c52d270
         resources:
          limits:
           cpu: 1500m
