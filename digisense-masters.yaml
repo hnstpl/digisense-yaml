@@ -38,6 +38,8 @@ spec:
           value: gcavailabilitydevuat-bucket01
         - name: StorageDomain
           value: https://storage.googleapis.com/
+        - name: cloudpath
+          value: GeneralCustomerApp/masters/Resources/Images/
         ports:
         - containerPort:  80
       restartPolicy: Always
