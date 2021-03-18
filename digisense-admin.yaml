@@ -34,6 +34,14 @@ spec:
               key: password
         - name: DevelopmentType
           value: Dev
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: digisense-fd-236012-f36d767c79bc.json
+        - name: gcbucketdev
+          value: gcavailabilitydevuat-bucket01
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
+        - name: UserManualFileType
+          value: "3"
         ports:
         - containerPort:  80
       restartPolicy: Always
