@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  prod-digisense-portal
-        image:  asia.gcr.io/generalcustomeravailability/prod_adminportal@sha256:d0a12331fa1dbe384cb1479c6768d237c7b8871e73cb5c7461e53d0c8c52d270
+        image:  asia.gcr.io/generalcustomeravailability/prod_adminportal
         resources:
          limits:
           cpu: 1500m
@@ -35,14 +35,20 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Live
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: generalcustomeravailability-c9c58a28f833.json
+        - name: gcbucket
+          value: gcavailability-bucket01
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
+        - name: UserManualFileType
+          value: "3"
         - name: ASPNETCORE_ENVIRONMENT
           value: Production
         - name: INSTANCE_CONNECTION_NAME
           value: generalcustomeravailability:asia-south1:gcavailability-mysql8-1
-        - name: StorageDomain
-          value: https://storage.googleapis.com/
-        - name: gcbucket
-          value: gcavailability-bucket01
         ports:
         - containerPort:  80
       serviceAccount: default
