@@ -28,6 +28,16 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: SMSUSER
+          value: "7550223074"
+        - name: SMSPASSWORD
+          value: mahindra%40123
+        - name: SMSGATEWAY
+          value: https://bulkpush.mytoday.com/BulkSms/SingleMsgApi
+        - name: SMSFEEDID
+          value: "382593"
+        - name: NewCustDeviceID
+          value: New_Customer
         ports:
         - containerPort:  80
       restartPolicy: Always
