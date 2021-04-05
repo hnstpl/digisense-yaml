@@ -35,4 +35,10 @@ spec:
               value: "000001"
             - name: CMS_ProductAPI
               value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
+            - name: gcbucketdev
+              value: gcavailabilitydevuat-bucket01
+            - name: gcbucket
+              value: gcavailability-bucket01
+            - name: StorageDomain
+              value: https://storage.googleapis.com/
           restartPolicy: OnFailure
