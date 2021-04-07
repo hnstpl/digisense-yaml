@@ -32,6 +32,22 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Dev
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: digisense-fd-236012-f36d767c79bc.json
+        - name: EncryptServiceURL
+          value: https://dev.hnsonline.com/GeneralCustomerAPI/api/Security/Enrypt_GeneralCustomerApp?request=
+        - name: DecryptServiceURL
+          value: https://dev.hnsonline.com/GeneralCustomerAPI/api/Security/Decrypt_GeneralCustomerApp?request=
+        - name: gcbucketdev
+          value: gcavailabilitydevuat-bucket01
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
+        - name: Database
+          value: digisense
+        - name: gcbucket
+          value: gcavailability-bucket01
         ports:
         - containerPort:  80
       restartPolicy: Always
