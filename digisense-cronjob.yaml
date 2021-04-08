@@ -41,4 +41,6 @@ spec:
               value: gcavailability-bucket01
             - name: StorageDomain
               value: https://storage.googleapis.com/
+            - name: DevelopmentType
+              value: Dev
           restartPolicy: OnFailure
