@@ -32,6 +32,12 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DigisenseDeviceTokenURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/devicetoken
+        - name: DigisenseLoginURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/login
+        - name: DigisenseAPIKey
+          value: 302d7814e01de206d1e02640b95ba39c8a3f2447a1c3aaadfff6d93aa600b9ce
         ports:
         - containerPort:  80
       restartPolicy: Always
