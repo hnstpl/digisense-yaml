@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-subscription
+  name:  prod-digisense-subscription
   labels:
-    app:  digisense-subscription
+    app:  prod-digisense-subscription
 spec:
   selector:
     matchLabels:
-      app: digisense-subscription
+      app: prod-digisense-subscription
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-subscription
+        app:  prod-digisense-subscription
     spec:
       containers:
       - name:  digisense-subscription
-        image:  asia.gcr.io/digisense-fd-236012/subscription
+        image:  asia.gcr.io/generalcustomeravailability/prod_subscription
         resources:
          limits:
           cpu: 50m
@@ -31,6 +31,22 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Live
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: digisense-fd-236012-f36d767c79bc.json
+        - name: EncryptServiceURL
+          value: https://dev.hnsonline.com/GeneralCustomerAPI/api/Security/Enrypt_GeneralCustomerApp?request=
+        - name: DecryptServiceURL
+          value: https://dev.hnsonline.com/GeneralCustomerAPI/api/Security/Decrypt_GeneralCustomerApp?request=
+        - name: gcbucketdev
+          value: gcavailabilitydevuat-bucket01
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
+        - name: Database
+          value: digisense
+        - name: gcbucket
+          value: gcavailability-bucket01
         ports:
         - containerPort:  80
       restartPolicy: Always
