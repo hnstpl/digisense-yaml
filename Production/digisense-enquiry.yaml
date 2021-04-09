@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-enquiry
+  name:  prod-digisense-enquiry
   labels:
-    app:  digisense-enquiry
+    app:  prod-digisense-enquiry
 spec:
   selector:
     matchLabels:
-      app: digisense-enquiry
+      app: prod-digisense-enquiry
   replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-enquiry
+        app:  prod-digisense-enquiry
     spec:
       containers:
-      - name:  digisense-enquiry
+      - name:  prod-digisense-enquiry
         image:  asia.gcr.io/digisense-fd-236012/enquiry
         resources:
          limits:

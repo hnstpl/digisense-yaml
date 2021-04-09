@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-fromfdw
+  name:  prod-digisense-fromfdw
   labels:
-    app:  digisense-fromfdw
+    app:  prod-digisense-fromfdw
 spec:
   selector:
     matchLabels:
-      app: digisense-fromfdw
-  replicas: 2
+      app: prod-digisense-fromfdw
+  replicas: 1
   template:
     metadata:
       labels:
-        app:  digisense-fromfdw
+        app:  prod-digisense-fromfdw
     spec:
       containers:
-      - name:  digisense-fromfdw
+      - name:  prod-digisense-fromfdw
         image:  asia.gcr.io/digisense-fd-236012/getfromfdw
         resources:
          limits:
-          cpu: 25m
+          cpu: 100m
         env:
         - name: DBHOST
           value: digisense-mysql
@@ -28,6 +28,16 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: SMSUSER
+          value: "7550223074"
+        - name: SMSPASSWORD
+          value: mahindra%40123
+        - name: SMSGATEWAY
+          value: https://bulkpush.mytoday.com/BulkSms/SingleMsgApi
+        - name: SMSFEEDID
+          value: "382593"
+        - name: NewCustDeviceID
+          value: New_Customer
         ports:
         - containerPort:  80
       restartPolicy: Always

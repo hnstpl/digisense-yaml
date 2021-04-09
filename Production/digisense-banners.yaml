@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  digisense-banners
+  name:  prod-digisense-banners
   labels:
-    app:  digisense-banners
+    app:  prod-digisense-banners
 spec:
   selector:
     matchLabels:
-      app: digisense-banners
+      app: prod-digisense-banners
   replicas: 2
   template:
     metadata:
       labels:
-        app:  digisense-banners
+        app:  prod-digisense-banners
     spec:
       containers:
-      - name:  digisense-enquiry
+      - name:  prod-digisense-banners
         image:  asia.gcr.io/generalcustomeravailability/prod_banners
         resources:
          limits:
@@ -32,6 +32,12 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DigisenseDeviceTokenURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/devicetoken
+        - name: DigisenseLoginURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/login
+        - name: DigisenseAPIKey
+          value: 302d7814e01de206d1e02640b95ba39c8a3f2447a1c3aaadfff6d93aa600b9ce
         ports:
         - containerPort:  80
       restartPolicy: Always

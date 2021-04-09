@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: digisense-banners-svc
+  name: prod-digisense-banners-svc
 spec:
   selector:
-    app: digisense-banners
+    app: prod-digisense-banners
   type: NodePort
   ports:
   - port: 8001 
