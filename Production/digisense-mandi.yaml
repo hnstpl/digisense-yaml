@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name:  prod-digisense-mandi
-        image:  asia.gcr.io/digisense-fd-236012/mandi
+        image:  asia.gcr.io/generalcustomeravailability/prod_mandi
         resources:
          limits:
           cpu: 75m
