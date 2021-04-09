@@ -47,6 +47,10 @@ spec:
           value: https://apiqa1.mahindradigisense.com/api/v2/profile?isSec=true
         - name: DigisenseChangePINURL
           value: https://apiqa1.mahindradigisense.com/api/v2/changepin
+        - name: DefaultServiceAdvisor
+          value: "18004256576"
+        - name: DefaultServiceAdvisorName
+          value: "Connect Mahindra"
         ports:
         - containerPort:  80
       restartPolicy: Always
