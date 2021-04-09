@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: prod-digisense-banners
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -19,8 +19,8 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_banners
         resources:
          limits:
-          cpu: 200m
-          memory: 400Mi
+          cpu: 350m
+          memory: 600Mi
          requests:
           cpu: 100m
           memory: 200Mi
