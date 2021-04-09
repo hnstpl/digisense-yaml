@@ -4,7 +4,6 @@ metadata:
   name: prod-digisense-microservices
   annotations: 
     kubernetes.io/ingress.global-static-ip-name: "gca-gke-staticip"
-    kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
   - http:
