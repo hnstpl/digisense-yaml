@@ -20,3 +20,23 @@ spec:
           backend:
             serviceName: prod-digisense-masters-svc
             servicePort: 8001
+        - path: /mandi/*
+          backend:
+            serviceName: prod-digisense-mandi-svc
+            servicePort: 8001
+        - path: /enquiry/*
+          backend:
+            serviceName: prod-digisense-enquiry-svc
+            servicePort: 8001
+        - path: /bannersandnotifications/*
+          backend:
+            serviceName: prod-digisense-banners-svc
+            servicePort: 8001
+        - path: /subscription/*
+          backend:
+            serviceName: prod-digisense-subscription-svc
+            servicePort: 8001
+        - path: /fdwmasters/*
+          backend:
+            serviceName: prod-digisense-fromfdw-svc
+            servicePort: 8001
