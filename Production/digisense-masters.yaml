@@ -28,6 +28,16 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Live
+        - name: gcbucketdev
+          value: gcavailabilitydevuat-bucket01
+        - name: gcbucket
+          value: gcavailability-bucket01
+        - name: StorageDomain
+          value: https://storage.googleapis.com/
+        - name: cloudpath
+          value: GeneralCustomerApp/masters/Resources/Images/
         ports:
         - containerPort:  80
       restartPolicy: Always
