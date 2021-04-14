@@ -48,6 +48,14 @@ spec:
           value: digisense
         - name: gcbucket
           value: gcavailability-bucket01
+        - name: SAC_CODE
+          value: "998599"
+        - name: KUNNR
+          value: A042111
+        - name: WERKS
+          value: FMKT
+        - name: SORG
+          value: F001
         ports:
         - containerPort:  80
       restartPolicy: Always
