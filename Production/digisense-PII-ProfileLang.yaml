@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
           - name: pii-profilelang-job
-            image: asia.gcr.io/generalcustomeravailability/generalcustapp-pii-job
+            image: asia.gcr.io/generalcustomeravailability/generalcustapp-pii-profilelang-job
             resources:
              limits:
               cpu: 1800m
