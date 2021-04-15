@@ -24,7 +24,6 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
-        # ... other container configuration
       - name: cloud-sql-proxy
         # It is recommended to use the latest version of the Cloud SQL proxy
         # Make sure to update on a regular schedule!
