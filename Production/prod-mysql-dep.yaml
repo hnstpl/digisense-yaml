@@ -14,6 +14,16 @@ spec:
       serviceAccountName: default
       containers:
       # - name: prod-mysql
+        env:
+        - name: DB_USER
+          value: root
+        - name: DB_NAME
+          value: dev_encrypted_generalcustomerapp
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
         # ... other container configuration
       - name: cloud-sql-proxy
         # It is recommended to use the latest version of the Cloud SQL proxy
@@ -32,11 +42,4 @@ spec:
         securityContext:
           # The default Cloud SQL proxy image runs as the
           # "nonroot" user and group (uid: 65532) by default.
-        env:
-        - name: DB_USER
-          value: root
-        - name: DB_PASS
-          value: O5GJk2fwJc0kap8m
-        - name: DB_NAME
-          value: dev_encrypted_generalcustomerapp
         # runAsNonRoot: false
