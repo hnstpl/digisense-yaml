@@ -38,6 +38,12 @@ spec:
           value: "382593"
         - name: NewCustDeviceID
           value: New_Customer
+        - name: AppName1
+          value: MTracWorld
+        - name: AppName
+          value: TracWorld!
+        - name: AppDownloadURL
+          value: https://custappdev.mahindradigisense.com/AppShare/Download.html
         ports:
         - containerPort:  80
       restartPolicy: Always
