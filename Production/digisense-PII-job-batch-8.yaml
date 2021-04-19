@@ -1,0 +1,54 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: digisense-cron-batch8
+spec:
+  schedule: 0 0 1 1 *
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pii-job
+            image: asia.gcr.io/generalcustomeravailability/generalcustapp-pii-job-batch8
+            resources:
+             limits:
+              cpu: 1800m
+              memory: 1500Mi
+             requests:
+              cpu: 100m
+              memory: 200Mi
+            env:
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: private-ip-secret
+                  key: db_host
+            - name: DBPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
+            - name: MandiResourceUrl
+              value: https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&limit=10
+            - name: DefaultLanguageID
+              value: "1"
+            - name: TractorModuleName
+              value: Tractor
+            - name: CropURL
+              value: https://byotdms-website.azurewebsites.net/api/master/GetCrops?date=1990-01-01 04:53:13.684&start=0&pageSize=50
+            - name: SelfManufactCode
+              value: "000001"
+            - name: CMS_ProductAPI
+              value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
+            - name: gcbucketdev
+              value: gcavailabilitydevuat-bucket01
+            - name: gcbucket
+              value: gcavailability-bucket01
+            - name: StorageDomain
+              value: https://storage.googleapis.com/
+            - name: DevelopmentType
+              value: Dev
+          restartPolicy: OnFailure
