@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_unifiedlogin
         resources:
          limits:
-          cpu: 180m
+          cpu: 300m
         env:
         - name: DB_HOST
           valueFrom:
@@ -51,6 +51,8 @@ spec:
           value: "18004256576"
         - name: DefaultServiceAdvisorName
           value: "Connect Mahindra"
+        - name: SalesManDesigCode
+          value: "382"
         ports:
         - containerPort:  80
       restartPolicy: Always

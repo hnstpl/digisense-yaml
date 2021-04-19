@@ -48,6 +48,8 @@ spec:
           value: "18004256576"
         - name: DefaultServiceAdvisorName
           value: "Connect Mahindra"
+        - name: SalesManDesigCode
+          value: "382"
         ports:
         - containerPort:  80
       restartPolicy: Always
