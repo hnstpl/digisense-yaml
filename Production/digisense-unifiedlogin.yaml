@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_unifiedlogin
         resources:
          limits:
-          cpu: 700m
+          cpu: 500m
         env:
         - name: DB_HOST
           valueFrom:
