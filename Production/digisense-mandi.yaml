@@ -19,7 +19,7 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_mandi
         resources:
          limits:
-          cpu: 75m
+          cpu: 400m
         env:
         - name: DB_HOST
           valueFrom:
