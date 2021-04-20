@@ -53,6 +53,16 @@ spec:
           value: "Connect Mahindra"
         - name: SalesManDesigCode
           value: "382"
+        - name: DevelopmentType
+          value: Dev
+        - name: ProdDigisenseAPIKey
+          value: 5fdf60e35d97fd70c6676050f64dac1d127ffec5f2260dd6d2607e6b231fd234
+        - name: ProdDigisenseChangePINURL
+          value: https://api.mahindradigisense.com/api/v2/changepin
+        - name: ProdDigisenseLoginURL
+          value: https://api.mahindradigisense.com/api/v2/login
+        - name: ProdDigisenseUpdateProfileURL
+          value: https://api.mahindradigisense.com/api/v2/profile?isSec=true
         ports:
         - containerPort:  80
       restartPolicy: Always
