@@ -17,6 +17,11 @@ spec:
       containers:
       - name:  digisense-masters
         image:  asia.gcr.io/generalcustomeravailability/prod_masters
+        resources:
+         limits:
+          cpu: 500m
+         requests:
+          cpu: 60m
         env:
         - name: DB_HOST
           valueFrom:
