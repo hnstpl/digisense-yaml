@@ -19,9 +19,10 @@ spec:
         image:  asia.gcr.io/generalcustomeravailability/prod_enquiry
         resources:
          limits:
-          cpu: 600m
+          cpu: 1200m
           memory: 260Mi
          requests:
+          cpu: 100m
           memory: 85Mi
         env:
         - name: DBHOST
