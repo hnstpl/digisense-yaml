@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: digisense-cron-batch9
+  name: digisense-cron-batch11
 spec:
   schedule: 0 0 1 1 *
   successfulJobsHistoryLimit: 3
