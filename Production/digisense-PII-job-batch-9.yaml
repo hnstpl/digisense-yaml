@@ -15,8 +15,8 @@ spec:
             image: asia.gcr.io/generalcustomeravailability/generalcustapp-pii-job-batch9
             resources:
              limits:
-              cpu: 1800m
-              memory: 1500Mi
+              cpu: 2500m
+              memory: 1800Mi
              requests:
               cpu: 100m
               memory: 200Mi
