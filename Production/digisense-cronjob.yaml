@@ -44,4 +44,22 @@ spec:
               value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: generalcustomeravailability-c9c58a28f833.json
+            - name: Key
+              value: X-DreamFactory-API-Key
+            - name: ProdDigisenseAPIKey
+              value: f60e35d97fd70c6676050f64dac1d127ffec5f2260dd6d2607e6b231fd234
+            - name: gcbucket
+              value: gcavailability-bucket01
+            - name: ProdDigisenseLoginURL
+              value: https://api.mahindradigisense.com/api/v2/login
+            - name: TractorModuleName
+              value: Tractor
+            - name: StorageDomain
+              value: https://storage.googleapis.com/
+            - name: DevelopmentType
+              value: Live
+            - name: SubscriptionUpdateURL
+              value: https://apiqa1.mahindradigisense.com/api/v2/subscriptionupdate
+            - name: Type
+              value: Authorization
           restartPolicy: OnFailure
