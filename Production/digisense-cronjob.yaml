@@ -4,8 +4,8 @@ metadata:
   name: digisense-cron
 spec:
   schedule: "0 */11 * * *"
-  successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 3
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 10
   jobTemplate:
     spec:
       template:
