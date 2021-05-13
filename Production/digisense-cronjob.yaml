@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: digisense-cron
 spec:
-  schedule: "0 */2 * * *"
+  schedule: "0 */3 * * *"
   successfulJobsHistoryLimit: 10
   failedJobsHistoryLimit: 10
   jobTemplate:
@@ -62,4 +62,6 @@ spec:
               value: https://apiqa1.mahindradigisense.com/api/v2/subscriptionupdate
             - name: Type
               value: Authorization
+          startingDeadlineSeconds: 900
+          concurrencyPolicy: Forbid
           restartPolicy: OnFailure
