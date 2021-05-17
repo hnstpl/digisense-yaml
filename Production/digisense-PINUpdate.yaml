@@ -1,0 +1,67 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: digisense-pin-update
+spec:
+  schedule: "0 */11 * * *"
+  successfulJobsHistoryLimit: 30
+  failedJobsHistoryLimit: 30
+  startingDeadlineSeconds: 900
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pin-update
+            image: asia.gcr.io/generalcustomeravailability/prod_digi_pin_update
+            resources:
+             limits:
+              cpu: 1200m
+             requests:
+              cpu: 100m
+              memory: 100Mi
+            env:
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: private-ip-secret
+                  key: db_host
+            - name: DBPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
+            - name: MandiResourceUrl
+              value: https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&limit=10
+            - name: DefaultLanguageID
+              value: "1"
+            - name: TractorModuleName
+              value: Tractor
+            - name: CropURL
+              value: https://byotdms-website.azurewebsites.net/api/master/GetCrops?date=1990-01-01 04:53:13.684&start=0&pageSize=50
+            - name: SelfManufactCode
+              value: "000001"
+            - name: CMS_ProductAPI
+              value: https://byotdms-website.azurewebsites.net/api/master/GetModels?date=1990-01-01 04:53:13.684&start=0&pageSize=500
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: generalcustomeravailability-c9c58a28f833.json
+            - name: Key
+              value: X-DreamFactory-API-Key
+            - name: ProdDigisenseAPIKey
+              value: f60e35d97fd70c6676050f64dac1d127ffec5f2260dd6d2607e6b231fd234
+            - name: gcbucket
+              value: gcavailability-bucket01
+            - name: ProdDigisenseLoginURL
+              value: https://api.mahindradigisense.com/api/v2/login
+            - name: TractorModuleName
+              value: Tractor
+            - name: StorageDomain
+              value: https://storage.googleapis.com/
+            - name: DevelopmentType
+              value: Live
+            - name: SubscriptionUpdateURL
+              value: https://apiqa1.mahindradigisense.com/api/v2/subscriptionupdate
+            - name: Type
+              value: Authorization
+          restartPolicy: OnFailure
