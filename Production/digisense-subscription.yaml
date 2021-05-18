@@ -59,6 +59,18 @@ spec:
           value: FMKT
         - name: SORG
           value: F001
+        - name: SubscriptionUpdateURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/subscriptionupdate
+        - name: ProdDigisenseAPIKey
+          value: 5fdf60e35d97fd70c6676050f64dac1d127ffec5f2260dd6d2607e6b231fd234
+        - name: Type
+          value: Authorization
+        - name: DigisenseLoginURL
+          value: https://apiqa1.mahindradigisense.com/api/v2/login
+        - name: ProdDigisenseLoginURL
+          value: https://api.mahindradigisense.com/api/v2/login
+        - name: DigisenseAPIKey
+          value: 302d7814e01de206d1e02640b95ba39c8a3f2447a1c3aaadfff6d93aa600b9ce
         ports:
         - containerPort:  80
       restartPolicy: Always
