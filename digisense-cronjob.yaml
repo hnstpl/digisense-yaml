@@ -43,4 +43,8 @@ spec:
               value: https://storage.googleapis.com/
             - name: DevelopmentType
               value: Dev
+            - name: pathtodeletedev
+              value: GeneralCustomerApp/XML_Invoice_Job
+            - name: pathtodelete
+              value: GeneralCustomerApp/XML_Invoice_Job
           restartPolicy: OnFailure

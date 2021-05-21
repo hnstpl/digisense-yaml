@@ -64,4 +64,8 @@ spec:
               value: https://apiqa1.mahindradigisense.com/api/v2/subscriptionupdate
             - name: Type
               value: Authorization
+            - name: pathtodeletedev
+              value: GeneralCustomerApp/XML_Invoice_Job
+            - name: pathtodelete
+              value: GeneralCustomerApp/XML_Invoice_Job
           restartPolicy: OnFailure
