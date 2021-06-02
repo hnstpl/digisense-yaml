@@ -31,6 +31,12 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: DevelopmentType
+          value: Dev
+        - name: EnquirySyncURLUAT
+          value: https://mmcrmuat.mahindraheartbeat.com:8080/Production/ADLeadPush/FarmBrand.aspx?
+        - name: EnquirySyncURLProd
+          value: https://crm.mahindraheartbeat.com:8880/Production/ADLeadPush/FarmBrand.aspx?
         ports:
         - containerPort:  80
       restartPolicy: Always
