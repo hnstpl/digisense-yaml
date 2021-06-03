@@ -60,6 +60,8 @@ spec:
           value: https://api.mahindradigisense.com/api/v2/login
         - name: ProdDigisenseUpdateProfileURL
           value: https://api.mahindradigisense.com/api/v2/profile?isSec=true
+        - name: TimeZoneName
+          value: Asia/Kolkata
         ports:
         - containerPort:  80
       restartPolicy: Always
