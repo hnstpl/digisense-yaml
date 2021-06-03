@@ -40,6 +40,8 @@ spec:
           value: https://storage.googleapis.com/
         - name: cloudpath
           value: GeneralCustomerApp/masters/Resources/Images/
+        - name: TimeZoneName
+          value: Asia/Kolkata
         ports:
         - containerPort:  80
       restartPolicy: Always

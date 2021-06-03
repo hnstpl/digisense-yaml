@@ -28,6 +28,8 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        - name: TimeZoneName
+          value: Asia/Kolkata
         ports:
         - containerPort:  80
       restartPolicy: Always

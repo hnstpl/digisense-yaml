@@ -42,6 +42,8 @@ spec:
           value: https://storage.googleapis.com/
         - name: UserManualFileType
           value: "3"
+        - name: TimeZoneName
+          value: Asia/Kolkata
         ports:
         - containerPort:  80
       restartPolicy: Always
