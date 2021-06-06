@@ -70,4 +70,4 @@ spec:
               value: GeneralCustomerApp/XML_Invoice_Job
             - name: expduration
               value: "-730"
-          restartPolicy: "no"
+          restartPolicy: Never
