@@ -13,7 +13,7 @@ spec:
       template:
         spec:
           containers:
-          - name: hello
+          - name: digisense-prod-cron-container
             image: asia.gcr.io/generalcustomeravailability/prod_generalcustapp_cronjob
             resources:
              limits:
